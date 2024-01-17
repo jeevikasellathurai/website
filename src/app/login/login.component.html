@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Login</h1>
+                    <h6>Please enter email & password !!</h6>
+                </div>
+                
+                    <form [formGroup]="loginForm">
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">Name</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="name" name="name">
+                          <div *ngIf="loginForm.get('name')?.touched && loginForm.get('name')?.hasError('required')" class="text-danger">Name is required</div>
+
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Password</label>
+                          <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" name="password">
+                          <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.hasError('required')" class="text-danger">Name is required</div>
+                        </div>                        
+                        <button type="submit" class="btn btn-primary" (click)="login()" [disabled]="loginForm.invalid">Login</button>
+                      </form>
+                <a routerLink="/signup" class="text-white mt-3">New user? Click to signup!!</a>
+                      
+            </div>
+        </div>
+
+    </div>
+</div>

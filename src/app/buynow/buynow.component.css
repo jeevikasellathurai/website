@@ -1,0 +1,23 @@
+.btn-group{
+    margin-right: 3cm;
+}
+.size-btn-group{
+    margin-right: 9cm;
+}
+.custom-radio input[type="radio"] {
+    display: none;
+}
+
+.custom-radio input[type="radio"] + label {
+    padding: 8px 8px;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.custom-radio input[type="radio"]:checked + label {
+    background-color: #4CAF50;
+    color: white;
+}
+

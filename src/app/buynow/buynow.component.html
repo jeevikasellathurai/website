@@ -1,0 +1,367 @@
+<!-- <div class="form-box container text-center w-50 mt-5 p-4 bg-light rounded">
+    <form>
+        <h4 class="fs-3 text-danger mb-5">Order Details</h4>
+        <div class="row mb-3">
+            <label class="col-3 col-form-label fs-4 text-end "><b>Name :</b></label>
+            <div class="col">
+                <input type="text" class="form-control w-75" name="name" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-3 col-form-label fs-4 text-end"><b>Quantity :</b></label>
+            <div class="col">
+                <input type="text" class="form-control w-75" name="quantity" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-3 col-form-label fs-4 text-end"><b>Size :</b></label>
+            <div class="col">
+                <div class="btn-group " role="group" aria-label="Size">
+                    <input type="radio" class="btn-check" name="size" id="size-s" value="s" autocomplete="off">
+                    <label class="btn btn-outline-info" for="size-s">S</label>
+
+                    <input type="radio" class="btn-check" name="size" id="size-m" value="m" autocomplete="off">
+                    <label class="btn btn-outline-info" for="size-m">M</label>
+
+                    <input type="radio" class="btn-check" name="size" id="size-l" value="l" autocomplete="off">
+                    <label class="btn btn-outline-info" for="size-l">L</label>
+
+                    <input type="radio" class="btn-check" name="size" id="size-xl" value="xl" autocomplete="off">
+                    <label class="btn btn-outline-info" for="size-xl">XL</label>
+
+                    <input type="radio" class="btn-check" name="size" id="size-xxl" value="xxl" autocomplete="off">
+                    <label class="btn btn-outline-info" for="size-xxl">XXL</label>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-3 col-form-label fs-4 text-end"><b>Color :</b></label>
+            <div class="col">
+                <select class="form-select w-75" name="color" required>
+                    <option value="pink">Pink</option>
+                    <option value="black">Black</option>
+                    <option value="white">White</option>
+                    <option value="red">Red</option>
+                    <option value="purple">Purple</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-3 col-form-label fs-4 text-end"><b>Address :</b></label>
+            <div class="col">
+                <textarea class="form-control w-75" name="address" rows="3" required></textarea>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-3 col-form-label fs-4 text-end"><b>Payment :</b></label>
+            <div class="col">
+                <div class="btn-group" role="group" aria-label="Payment">
+                    <input type="radio" class="btn-check" name="payment" id="payment-wallets" value="wallets" autocomplete="off">
+                    <label class="btn btn-outline-success" for="payment-wallets">Wallets</label>
+
+                    <input type="radio" class="btn-check" name="payment" id="payment-credit" value="credit" autocomplete="off">
+                    <label class="btn btn-outline-success" for="payment-credit">Credit/Debit/ATM Card</label>
+
+                    <input type="radio" class="btn-check" name="payment" id="payment-upi" value="Upi" autocomplete="off">
+                    <label class="btn btn-outline-success" for="payment-upi">UPI</label>
+
+                    <input type="radio" class="btn-check" name="payment" id="payment-netbanking" value="netbanking" autocomplete="off">
+                    <label class="btn btn-outline-success" for="payment-netbanking">Net Banking</label>
+
+                    <input type="radio" class="btn-check" name="payment" id="payment-cashondelivery" value="cashondelivery" autocomplete="off">
+                    <label class="btn btn-outline-success" for="payment-cashondelivery">Cash On Delivery</label>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Place Order</button>
+    </form>
+</div> -->
+<!-- <div *ngFor="let product of products">
+    <button (click)="selectProduct(product)" class="btn btn-primary">Buy Now</button>
+  </div>
+  <img *ngIf="selectedProduct" [src]="selectedProduct.image" alt="Selected Product Image"> -->
+
+
+
+<!-- 
+<div class="form-box container text-center w-50 mt-5 p-4 bg-light rounded">
+    <form [formGroup]="contactForm">
+        <h4 class="fs-3 text-danger mb-5">Order Details</h4>
+        <div *ngIf="selectedProduct">
+            <img [src]="selectedProduct.image" alt="Selected Product" style="width: 25%;"><br>
+            <label class="col-3 col-form-label fs-4 text-end"><b>Price :</b></label>
+            <strong> $ {{ selectedProduct.price }}</strong>
+          </div>
+        
+        <div class="row mb-3">
+            <label class="col-3 col-form-label fs-4 text-end"><b>Name :</b></label>
+            <div class="col">
+                <input type="text" class="form-control w-75" name="name" formControlName="name">
+                <span *ngIf="contactForm.controls['name']?.invalid && contactForm.controls['name']?.touched">
+                    <span style="color: red;" *ngIf="contactForm.controls['name']?.errors?.['required']">
+                        *required
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-3 col-form-label fs-4 text-end"><b>Quantity :</b></label>
+            <div class="col">
+                <input type="text" class="form-control w-75" name="quantity" formControlName="quantity">
+                <span *ngIf="contactForm.controls['quantity']?.invalid && contactForm.controls['quantity']?.touched">
+                    <span style="color: red;" *ngIf="contactForm.controls['quantity']?.errors?.['required']">
+                        *required
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-3 col-form-label fs-4 text-end"><b>Size :</b></label>
+            <div class="col size-btn-group">
+                <div class="btn-group" role="group" aria-label="Size">
+                    <input type="radio" class="btn-check" name="size" id="size-s" value="s" autocomplete="off"
+                        formControlName="size">
+                    <label class="btn btn-outline-info" for="size-s">S</label>
+
+                    <input type="radio" class="btn-check" name="size" id="size-m" value="m" autocomplete="off"
+                        formControlName="size">
+                    <label class="btn btn-outline-info" for="size-m">M</label>
+
+                    <input type="radio" class="btn-check" name="size" id="size-l" value="l" autocomplete="off"
+                        formControlName="size">
+                    <label class="btn btn-outline-info" for="size-l">L</label>
+
+                    <input type="radio" class="btn-check" name="size" id="size-xl" value="xl" autocomplete="off"
+                        formControlName="size">
+                    <label class="btn btn-outline-info" for="size-xl">XL</label>
+
+                    <input type="radio" class="btn-check" name="size" id="size-xxl" value="xxl" autocomplete="off"
+                        formControlName="size">
+                    <label class="btn btn-outline-info" for="size-xxl">XXL</label>
+                </div>
+                <span
+                    *ngIf="contactForm.controls['size']?.untouched && contactForm.controls['size']?.hasError('required')">
+                    <span style="color: red;">*required</span>
+                </span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-3 col-form-label fs-4 text-end"><b>Color :</b></label>
+            <div class="col">
+                <select class="form-select w-75" name="color" formControlName="color">
+                    <option value="pink">Pink</option>
+                    <option value="black">Black</option>
+                    <option value="white">White</option>
+                    <option value="red">Red</option>
+                    <option value="purple">Purple</option>
+                </select>
+                <span
+                    *ngIf="contactForm.controls['color']?.touched && contactForm.controls['color']?.hasError('required')">
+                    <span style="color: red;">*required</span>
+                </span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-3 col-form-label fs-4 text-end"><b>Address :</b></label>
+            <div class="col">
+                <textarea class="form-control w-75" name="address" rows="3" formControlName="address"></textarea>
+                <span *ngIf="contactForm.controls['address']?.touched && contactForm.controls['address']?.touched">
+                    <span style="color: red;" *ngIf="contactForm.controls['address']?.errors?.['required']">
+                        *required
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-3 col-form-label fs-4 text-end"><b>Payment :</b></label>
+            <div class="col">
+                <div class="btn-group" role="group" aria-label="Payment">
+                    <input type="radio" class="btn-check" name="payment" id="payment-wallets" value="wallets"
+                        autocomplete="off" formControlName="payment">
+                    <label class="btn btn-outline-success" for="payment-wallets">Wallets</label>
+
+                    <input type="radio" class="btn-check" name="payment" id="payment-credit" value="credit"
+                        autocomplete="off" formControlName="payment">
+                    <label class="btn btn-outline-success" for="payment-credit">Credit/Debit/ATM Card</label>
+
+                    <input type="radio" class="btn-check" name="payment" id="payment-upi" value="Upi" autocomplete="off"
+                        formControlName="payment">
+                    <label class="btn btn-outline-success" for="payment-upi">UPI</label>
+
+                    <input type="radio" class="btn-check" name="payment" id="payment-netbanking" value="netbanking"
+                        autocomplete="off" formControlName="payment">
+                    <label class="btn btn-outline-success" for="payment-netbanking">Net Banking</label>
+
+                    <input type="radio" class="btn-check" name="payment" id="payment-cashondelivery"
+                        value="cashondelivery" autocomplete="off" formControlName="payment">
+                    <label class="btn btn-outline-success" for="payment-cashondelivery">Cash On Delivery</label>
+                </div>
+                <span
+                    *ngIf="contactForm.controls['payment']?.untouched && contactForm.controls['payment']?.hasError('required')">
+                    <span style="color: red;">*required</span>
+                </span>
+            </div>
+        </div>
+       
+        <button type="submit" class="btn btn-primary" (click)="onSubmit()" [disabled]="contactForm.invalid">Place
+            Order</button>
+           
+              
+    </form>
+</div>  -->
+
+
+<h4 class="fs-3 text-danger mb-5 text-center">Order Details</h4>
+
+<div class="form-box container text-center mt-5 p-4 bg-light rounded" style="margin-left: 8.5cm;">
+    <form [formGroup]="contactForm">
+        <div class="row">
+            <!-- First Column for Image and Price -->
+            <div class="col-md-6">
+                <div *ngIf="selectedProduct">
+                    <img [src]="selectedProduct.image" alt="Selected Product" class="img-fluid mb-3"
+                        style="height: 12cm;"><br>
+                    <label class="col-form-label fs-4 text-end"><b>Price :</b></label>
+                    <strong class="fs-5"> $ {{ selectedProduct.price }}</strong>
+                </div>
+            </div>
+
+            <!-- Second Column for Other Details -->
+            <div class="col-md-6">
+                <div class="row mb-3">
+                    <label class="col-4 col-form-label fs-4 text-end"><b>Name :</b></label>
+                    <div class="col">
+                        <input type="text" class="form-control" name="name" formControlName="name">
+                        <span *ngIf="contactForm.controls['name']?.invalid && contactForm.controls['name']?.touched"
+                            style="color: red;">*required</span>
+                    </div>
+                </div><br>
+
+                <div class="row mb-3">
+                    <label class="col-4 col-form-label fs-4 text-end"><b>Quantity :</b></label>
+                    <div class="col">
+                        <select class="form-select" name="quantity" formControlName="quantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <span
+                            *ngIf="contactForm.controls['quantity']?.invalid && contactForm.controls['quantity']?.touched"
+                            style="color: red;">*required</span>
+                    </div>
+                </div><br>
+
+                <div class="row mb-3 align-items-center">
+                    <label class="col-4 col-form-label fs-4 text-end"><b>Size :</b></label>
+                    <div class="col size-options">
+                        <div class="form-check form-check-inline custom-radio">
+                            <input type="radio" class="form-check-input visually-hidden" name="size" id="size-s"
+                                value="s" formControlName="size">
+                            <label class="form-check-label" for="size-s">S</label>
+                        </div>
+                        <div class="form-check form-check-inline custom-radio">
+                            <input type="radio" class="form-check-input visually-hidden" name="size" id="size-m"
+                                value="m" formControlName="size">
+                            <label class="form-check-label" for="size-m">M</label>
+                        </div>
+                        <div class="form-check form-check-inline custom-radio">
+                            <input type="radio" class="form-check-input visually-hidden" name="size" id="size-l"
+                                value="l" formControlName="size">
+                            <label class="form-check-label" for="size-l">L</label>
+                        </div>
+                        <div class="form-check form-check-inline custom-radio">
+                            <input type="radio" class="form-check-input visually-hidden" name="size" id="size-xl"
+                                value="xl" formControlName="size">
+                            <label class="form-check-label" for="size-xl">XL</label>
+                        </div>
+                        <div class="form-check form-check-inline custom-radio">
+                            <input type="radio" class="form-check-input visually-hidden" name="size" id="size-xxl"
+                                value="xxl" formControlName="size">
+                            <label class="form-check-label" for="size-xxl">XXL</label>
+                        </div>
+                         <!-- <span
+                            *ngIf="contactForm.controls['size']?.untouched && contactForm.controls['size']?.hasError('required')">
+                            <span style="color: red;">*required</span>
+                        </span> -->
+                    </div>
+                </div><br>
+
+                <!-- <div class="row mb-3">
+                    <label class="col-4 col-form-label fs-4 text-end"><b>Color :</b></label>
+                    <div class="col">
+                        <select class="form-select" name="color" formControlName="color">
+                            <option value="pink">Pink</option>
+                            <option value="black">Black</option>
+                            <option value="white">White</option>
+                            <option value="red">Red</option>
+                            <option value="purple">Purple</option>
+                        </select>
+                        <span
+                            *ngIf="contactForm.controls['color']?.touched && contactForm.controls['color']?.hasError('required')"
+                            style="color: red;">*required</span>
+                    </div>
+                </div><br> -->
+
+                <div class="row mb-3">
+                    <label class="col-4 col-form-label fs-4 text-end"><b>Address :</b></label>
+                    <div class="col">
+                        <textarea class="form-control" name="address" rows="3" formControlName="address"></textarea>
+                        <span
+                            *ngIf="contactForm.controls['address']?.touched && contactForm.controls['address']?.errors?.['required']"
+                            style="color: red;">*required</span>
+                    </div>
+                </div><br>
+
+                <div class="row mb-3">
+                    <label class="col-4 col-form-label fs-4 text-end"><b>Pincode :</b></label>
+                    <div class="col">
+                        <input type="text" class="form-control" name="pincode" formControlName="pincode">
+                        <span *ngIf="contactForm.controls['pincode']?.invalid && contactForm.controls['pincode']?.touched"
+                            style="color: red;">*required</span>
+                    </div>
+                </div><br>
+
+                <div class="row mb-3 align-items-center">
+                    <label class="col-4 col-form-label fs-4 text-end"><b>Payment :</b></label>
+                    <div class="col payment-options ">
+                        <div class="btn-group-vertical" role="group" aria-label="Payment">
+                            <input type="radio" class="btn-check" name="payment" id="payment-wallets" value="wallets"
+                                autocomplete="off" formControlName="payment">
+                            <label class="btn btn-outline-success" for="payment-wallets">Wallets</label>
+
+                            <input type="radio" class="btn-check" name="payment" id="payment-credit" value="credit"
+                                autocomplete="off" formControlName="payment">
+                            <label class="btn btn-outline-success" for="payment-credit">Credit/Debit/ATM Card</label>
+
+                            <input type="radio" class="btn-check" name="payment" id="payment-upi" value="Upi"
+                                autocomplete="off" formControlName="payment">
+                            <label class="btn btn-outline-success" for="payment-upi">UPI</label>
+
+                            <input type="radio" class="btn-check" name="payment" id="payment-netbanking"
+                                value="netbanking" autocomplete="off" formControlName="payment">
+                            <label class="btn btn-outline-success" for="payment-netbanking">Net Banking</label>
+
+                            <input type="radio" class="btn-check" name="payment" id="payment-cashondelivery"
+                                value="cashondelivery" autocomplete="off" formControlName="payment">
+                            <label class="btn btn-outline-success" for="payment-cashondelivery">Cash On Delivery</label>
+                        </div>
+                        <!-- <span
+                            *ngIf="contactForm.controls['payment']?.untouched && contactForm.controls['payment']?.hasError('required')">
+                            <span style="color: red;">*required</span>
+                        </span> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary" (click)="onSubmit()"
+                    [disabled]="contactForm.invalid">Place Order</button>
+            </div>
+        </div>
+    </form>
+</div>
